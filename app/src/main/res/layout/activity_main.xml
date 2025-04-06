@@ -13,7 +13,7 @@
         android:padding="24dp"
         android:background="#FFFFFF">
 
-        <!-- Título -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             android:layout_marginBottom="36dp"
             android:fontFamily="sans-serif-medium" />
 
-        <!-- Campo Código -->
+
         <EditText
             android:id="@+id/etCodigo"
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:textColor="#000000"
             android:textColorHint="#888888" />
 
-        <!-- Campo Ciudad -->
+
         <EditText
             android:id="@+id/etCiudad"
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:textColor="#000000"
             android:textColorHint="#888888" />
 
-        <!-- Botones Ciudad -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 android:backgroundTint="#C70000" />
         </LinearLayout>
 
-        <!-- Campo Departamento -->
+
         <EditText
             android:id="@+id/etDepartamento"
             android:layout_width="match_parent"
@@ -105,7 +105,7 @@
             android:textColor="#000000"
             android:textColorHint="#888888" />
 
-        <!-- Botones Departamento -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
                 android:backgroundTint="#C70000" />
         </LinearLayout>
 
-        <!-- Resultado -->
+
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
             android:layout_gravity="center_horizontal"
             android:fontFamily="sans-serif-medium" />
 
-        <!-- Botón Ver Actividades -->
+
         <Button
             android:id="@+id/btnVerActividades"
             android:layout_width="match_parent"

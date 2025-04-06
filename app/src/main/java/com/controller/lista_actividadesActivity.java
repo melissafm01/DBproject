@@ -86,7 +86,7 @@ public class lista_actividadesActivity extends AppCompatActivity {
 
                 layoutActividades.addView(actividadView);
 
-                // Añadir separador
+
                 View separador = new View(this);
                 separador.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,

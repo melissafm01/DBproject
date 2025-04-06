@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etCodigo, etCiudad, etDepartamento;
     private Button btnGuardarCiudad, btnActualizarCiudad, btnEliminarCiudad,
             btnGuardarDepartamento, btnActualizarDepartamento, btnEliminarDepartamento,
-            btnVerActividades; // Nuevo botón para actividades
+            btnVerActividades;
     private TextView tvResultado;
 
     @Override
@@ -28,14 +28,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar los objetos
+
         managerDB = new ManagerDB(this);
         etCodigo = findViewById(R.id.etCodigo);
         etCiudad = findViewById(R.id.etCiudad);
         etDepartamento = findViewById(R.id.etDepartamento);
         tvResultado = findViewById(R.id.tvResultado);
 
-        // Botones existentes
+
         btnGuardarCiudad = findViewById(R.id.btnGuardarCiudad);
         btnActualizarCiudad = findViewById(R.id.btnActualizarCiudad);
         btnEliminarCiudad = findViewById(R.id.btnEliminarCiudad);
@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         btnActualizarDepartamento = findViewById(R.id.btnActualizarDepartamento);
         btnEliminarDepartamento = findViewById(R.id.btnEliminarDepartamento);
 
-        // Nuevo botón para actividades
+
         btnVerActividades = findViewById(R.id.btnVerActividades);
 
-        // Acciones de los botones (se mantienen igual)
+
         btnGuardarCiudad.setOnClickListener(v -> guardarCiudad());
         btnActualizarCiudad.setOnClickListener(v -> actualizarCiudad());
         btnEliminarCiudad.setOnClickListener(v -> eliminarCiudad());
@@ -54,14 +54,13 @@ public class MainActivity extends AppCompatActivity {
         btnActualizarDepartamento.setOnClickListener(v -> actualizarDepartamento());
         btnEliminarDepartamento.setOnClickListener(v -> eliminarDepartamento());
 
-        // Acción para el nuevo botón de actividades
         btnVerActividades.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, lista_actividadesActivity.class);
             startActivity(intent);
         });
     }
 
-    // Métodos existentes para Ciudad (se mantienen igual)
+
     private void guardarCiudad() {
         try {
             int codigo = Integer.parseInt(etCodigo.getText().toString().trim());

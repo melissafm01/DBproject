@@ -38,13 +38,13 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_CIUDAD);
         db.execSQL(SQL_CREATE_DEPARTAMENTO);
-        db.execSQL(SQL_CREATE_ACTIVIDADES); // Añade esta línea
+        db.execSQL(SQL_CREATE_ACTIVIDADES);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion < 2) {
-            db.execSQL("DROP TABLE IF EXISTS Actividades"); // Añade esta línea
+            db.execSQL("DROP TABLE IF EXISTS Actividades");
             onCreate(db);
         }
     }

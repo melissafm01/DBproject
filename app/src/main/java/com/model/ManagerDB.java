@@ -15,7 +15,6 @@ public class ManagerDB {
 
     }
 
-    // Funciones para Ciudad (se mantienen igual)
     public long insertCiudad(int codigo, String nombre) {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getWritableDatabase();
@@ -42,7 +41,7 @@ public class ManagerDB {
         return db.delete("Ciudad", "codigo = ?", new String[]{String.valueOf(codigo)});
     }
 
-    // Funciones para Departamento (se mantienen igual)
+
     public long insertDepartamento(int codigo, String nombre) {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getWritableDatabase();
@@ -69,11 +68,7 @@ public class ManagerDB {
         return db.delete("Departamento", "codigo = ?", new String[]{String.valueOf(codigo)});
     }
 
-    // ===== NUEVAS FUNCIONES PARA ACTIVIDADES =====
 
-    /**
-     * Inserta una nueva actividad en la base de datos
-     */
     public long insertActividad(String titulo, String descripcion, String fecha, String lugar, String responsables) {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getWritableDatabase();
@@ -87,9 +82,7 @@ public class ManagerDB {
         return db.insert("Actividades", null, valores);
     }
 
-    /**
-     * Actualiza una actividad existente
-     */
+
     public int updateActividad(int id, String titulo, String descripcion, String fecha, String lugar, String responsables) {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getWritableDatabase();
@@ -103,9 +96,7 @@ public class ManagerDB {
         return db.update("Actividades", valores, "id = ?", new String[]{String.valueOf(id)});
     }
 
-    /**
-     * Elimina una actividad por su ID
-     */
+
     public int deleteActividad(int id) {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getWritableDatabase();
@@ -113,9 +104,7 @@ public class ManagerDB {
         return db.delete("Actividades", "id = ?", new String[]{String.valueOf(id)});
     }
 
-    /**
-     * Obtiene todas las actividades ordenadas por título
-     */
+
     public Cursor getAllActividades() {
         if (db == null || !db.isOpen()) {
             db = dbHelper.getReadableDatabase();
@@ -125,18 +114,6 @@ public class ManagerDB {
                 null, null, null, null, "titulo ASC");
     }
 
-    /**
-     * Obtiene una actividad específica por su ID
-     */
-    public Cursor getActividadById(int id) {
-        if (db == null || !db.isOpen()) {
-            db = dbHelper.getReadableDatabase();
-        }
-        return db.query("Actividades",
-                new String[]{"id", "titulo", "descripcion", "fecha", "lugar", "responsables"},
-                "id = ?", new String[]{String.valueOf(id)},
-                null, null, null);
-    }
 
 
     }
